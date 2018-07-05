@@ -1,0 +1,28 @@
+export ANTIGEN="/usr/local/share/antigen"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin:/usr/texbin:/usr/local/opt/go/libexec/bin:/usr/local/opt/llvm/bin:$HOME/.cargo/bin:$HOME/.cabal/bin:$PATH"
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+PROXY_PORT=6152
+
+[ -f $HOME/.zshenv.local ] && source $HOME/.zshenv.local
+
+start_proxy() {
+export http_proxy=http://127.0.0.1:$PROXY_PORT
+export https_proxy=http://127.0.0.1:$PROXY_PORT
+}
+
+stop_proxy() {
+unset http_proxy
+unset https_proxy
+}
+
+# You may need to manually set your language environment
+export LANG=zh_CN.UTF-8
+export PYTHONIOENCODING=utf-8
+
+if [ -x "$(command -v nvim)" ]; then
+    export EDITOR='nvim'
+elif [ -x "$(command -v vim)" ]; then
+    export EDITOR='vim'
+else
+    export EDITOR='vi'
+fi

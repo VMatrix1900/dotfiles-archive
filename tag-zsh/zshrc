@@ -1,0 +1,25 @@
+source $ANTIGEN/antigen.zsh
+# Initialize oh-my-zsh
+antigen use oh-my-zsh
+
+# default bundles
+# visit https://github.com/unixorn/awesome-zsh-plugins
+antigen bundle git
+antigen bundle pip
+antigen bundle svn-fast-info
+antigen bundle z
+
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+
+# uncomment the line below to enable theme
+antigen theme robbyrussell
+
+# enable syntax highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
+
+setopt AUTO_CD
+alias pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
+alias pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip3 install -U'
