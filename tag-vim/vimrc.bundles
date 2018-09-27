@@ -71,8 +71,6 @@ call plug#begin('~/.vim/bundle')
     " General {
         if count(g:spf13_bundle_groups, 'general')
             Plug 'altercation/vim-colors-solarized'
-            let g:solarized_termcolors=256
-            let g:solarized_termtrans=1
             Plug 'tpope/vim-surround'
             Plug 'tpope/vim-repeat'
             Plug 'tpope/vim-unimpaired'
