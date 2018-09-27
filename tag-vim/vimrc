@@ -46,20 +46,6 @@
     " Basics {
         set nocompatible        " Must be first line
         set background=light         " Assume a light background
-        " Allow to trigger background
-        function! ToggleBG()
-            let s:tbg = &background
-            " Inversion
-            if s:tbg == "dark"
-                set background=light
-            else
-                set background=dark
-            endif
-        endfunction
-        noremap <leader>bg :call ToggleBG()<CR>
-        if !WINDOWS()
-            set shell=/bin/sh
-        endif
     " }
 
     " Windows Compatible {
@@ -108,15 +94,6 @@
         else         " On mac and Windows, use * register for copy-paste
             set clipboard=unnamed
         endif
-    endif
-
-    " Most prefer to automatically switch to the current file directory when
-    " a new buffer is opened; to prevent this behavior, add the following to
-    " your .vimrc.local file:
-    "   let g:spf13_no_autochdir = 1
-    if !exists('g:spf13_no_autochdir')
-        autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
-        " Always switch to the current file directory
     endif
 
     "set autowrite                       " Automatically write a file when leaving a modified buffer
@@ -303,11 +280,6 @@
     " Find merge conflict markers
     map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
-    " Shortcuts
-    " Change Working Directory to that of the current file
-    cmap cwd lcd %:p:h
-    cmap cd. lcd %:p:h
-
     " Visual shifting (does not exit Visual mode)
     vnoremap < <gv
     vnoremap > >gv
@@ -459,12 +431,6 @@
 
     execute "noremap " . s:spf13_edit_config_mapping " :call <SID>EditSpf13Config()<CR>"
     execute "noremap " . s:spf13_apply_config_mapping . " :source ~/.vimrc<CR>"
-" }
-
-" Use local vimrc if available {
-    if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
-    endif
 " }
 
 " Use local gvimrc if available and gui is running {
