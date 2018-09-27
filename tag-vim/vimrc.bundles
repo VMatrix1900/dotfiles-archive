@@ -215,7 +215,7 @@ call plug#begin('~/.vim/bundle')
         if count(g:spf13_bundle_groups, 'deoplete')
             Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
             let g:LanguageClient_serverCommands = {
-                        \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+                        \ 'rust': ['rustup', 'run', 'stable', 'rls'],
                         \ 'javascript': ['javascript-typescript-stdio'],
                         \ 'javascript.jsx': ['javascript-typescript-stdio'],
                         \ 'python': ['pyls'],
@@ -302,7 +302,7 @@ call plug#begin('~/.vim/bundle')
             if executable('rls')
                 au User lsp_setup call lsp#register_server({
                     \ 'name': 'rls',
-                    \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+                    \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
                     \ 'whitelist': ['rust'],
                     \ })
             endif
@@ -407,6 +407,8 @@ call plug#begin('~/.vim/bundle')
     " Rust {
         if count(g:spf13_bundle_groups, 'rust')
             Plug 'rust-lang/rust.vim'
+            let g:rustfmt_autosave = 1
+            " autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
         endif
     " }
 
