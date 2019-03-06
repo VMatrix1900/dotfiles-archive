@@ -152,7 +152,8 @@
 
 " Vim UI {
 
-    color solarized
+    color NeoSolarized
+    " color solarized
 
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
