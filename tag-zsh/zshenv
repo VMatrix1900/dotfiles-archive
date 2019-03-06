@@ -1,6 +1,7 @@
 export ANTIGEN="/usr/local/share/antigen"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin:/usr/texbin:/usr/local/opt/go/libexec/bin:/usr/local/opt/llvm/bin:$HOME/.cargo/bin:$HOME/.cabal/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin:/usr/texbin:/usr/local/opt/llvm/bin:$HOME/.cargo/bin:$PATH"
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+export HOMEBREW_AUTO_UPDATE_SECS="432000"
 PROXY_PORT=6152
 
 [ -f $HOME/.zshenv.local ] && source $HOME/.zshenv.local
