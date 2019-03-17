@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: USACO-training
+# key: OJ 
+# --
+/*
+ID: VMatrix
+PROG: $1
+LANG: C++11
+*/
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  ofstream fout("$1.out");
+  ifstream fin("$1.in");
+  $0
+  return 0;
+}
