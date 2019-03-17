@@ -405,7 +405,7 @@ call plug#begin('~/.vim/bundle')
 
     " Rust {
         if count(g:spf13_bundle_groups, 'rust')
-            let g:rustfmt_autosave_if_config_present = 1
+            " let g:rustfmt_autosave_if_config_present = 1
             let g:rust_fold = 0
             Plug 'rust-lang/rust.vim'
             au FileType rust setlocal foldmethod=syntax
